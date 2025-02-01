@@ -1,4 +1,4 @@
-# Win10 EOS Countdown (Licznika czasu do końca wsparcia systemu Windows 10)
+# Win10 EOS Countdown - Licznika czasu do końca wsparcia systemu Windows 10
 
 Repozytorium zawiera prostą aplikację PHP, która wyświetla licznik odliczający do końca wsparcia dla systemu Windows 10. Zawiera dwie główne części:
 
@@ -8,14 +8,14 @@ Repozytorium zawiera prostą aplikację PHP, która wyświetla licznik odliczaj�
 ### Zasada działania
 
 #### `index.php`
-`index.php` jest stroną internetową, która prezentuje licznik czasu do końca wsparcia dla systemu Windows 10. Zawiera wszystkie funkcje interfejsu użytkownika, takie jak wyświetlanie aktualnego czasu, formatowanie go w sposób przyjazny oraz informowanie, czy licznik jest aktywny (czyli czy znajdujemy się w dniu roboczym i w godzinach pracy).
+`index.php` to strona internetowa, która prezentuje licznik czasu do końca wsparcia dla systemu Windows 10. Zawiera wszystkie funkcje interfejsu użytkownika, takie jak wyświetlanie aktualnego czasu, formatowanie go w sposób przyjazny oraz informowanie, czy licznik jest aktywny (czyli czy znajdujemy się w dniu roboczym i w godzinach pracy).
 
 ##### Główne funkcje:
-1. **Liczenie pozostałego czasu**: 
+1. **Liczenie pozostałego czasu**:
    - Wykorzystywana jest stała data - **14 października 2025 roku** o godzinie **16:00**, która jest końcem wsparcia dla Windows 10.
    - Liczenie odbywa się tylko w godzinach roboczych (8:00-16:00) oraz tylko w dni robocze (od poniedziałku do piątku). Weekendy i dni wolne są pomijane.
 
-2. **Wyświetlanie odliczania**: 
+2. **Wyświetlanie odliczania**:
    - Czas jest przedstawiany w formacie dni, godzin, minut i sekund. Sekundy są wyświetlane w jasnoszarym kolorze, aby były mniej wyróżniające.
    - Jeśli licznik jest aktywny, pokazuje informację, że licznik działa (np. w dni robocze w godzinach pracy).
    - W weekendy i dni wolne od pracy, licznik jest nieaktywny, a w interfejsie użytkownika wyświetlana jest informacja o tym stanie.
@@ -53,13 +53,14 @@ Repozytorium zawiera prostą aplikację PHP, która wyświetla licznik odliczaj�
      }
      ```
 
----
+Licencja
+Projekt jest udostępniony na licencji MIT, co oznacza, że możesz dowolnie korzystać z tego kodu, modyfikować go i rozpowszechniać, pod warunkiem zachowania informacji o licencji.
 
-### Instrukcja użycia
+Autorzy
+Kod został stworzony z pomocą ChatGPT (OpenAI), która była użyta do generowania i optymalizacji kodu PHP, CSS oraz pomoc w strukturze aplikacji.
 
-#### Uruchamianie lokalnie:
-Aby uruchomić projekt lokalnie, wykonaj następujące kroki:
+O licencji MIT:
+Licencja MIT to jedna z najbardziej popularnych licencji open-source, która pozwala na swobodne używanie, kopiowanie, modyfikowanie oraz dystrybucję kodu źródłowego. Jednakże, ważne jest, by w przypadku rozpowszechniania kodu zachować odpowiednie informacje o licencji.
 
-1. Pobierz lub sklonuj repozytorium:
-   ```bash
-   git clone https://github.com/onslowek/win10-eos-countdown.git
+Czy możesz udostępniać kod?
+Tak, jak najbardziej. Możesz udostępniać ten kod w dowolny sposób, modyfikować go i wdrażać w swoich projektach. Kod, który został stworzony z pomocą ChatGPT, nie podlega żadnym ograniczeniom praw autorskich i jest całkowicie do Twojej dyspozycji.
