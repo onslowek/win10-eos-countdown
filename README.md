@@ -53,14 +53,14 @@ Repozytorium zawiera prostą aplikację PHP, która wyświetla licznik odliczaj�
      }
      ```
 
-Licencja
+### Licencja
 Projekt jest udostępniony na licencji MIT, co oznacza, że możesz dowolnie korzystać z tego kodu, modyfikować go i rozpowszechniać, pod warunkiem zachowania informacji o licencji.
 
-Autorzy
+### Autorzy
 Kod został stworzony z pomocą ChatGPT (OpenAI), która była użyta do generowania i optymalizacji kodu PHP, CSS oraz pomoc w strukturze aplikacji.
 
-O licencji MIT:
+### O licencji MIT:
 Licencja MIT to jedna z najbardziej popularnych licencji open-source, która pozwala na swobodne używanie, kopiowanie, modyfikowanie oraz dystrybucję kodu źródłowego. Jednakże, ważne jest, by w przypadku rozpowszechniania kodu zachować odpowiednie informacje o licencji.
 
-Czy możesz udostępniać kod?
+### Czy możesz udostępniać kod?
 Tak, jak najbardziej. Możesz udostępniać ten kod w dowolny sposób, modyfikować go i wdrażać w swoich projektach. Kod, który został stworzony z pomocą ChatGPT, nie podlega żadnym ograniczeniom praw autorskich i jest całkowicie do Twojej dyspozycji.
