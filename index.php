@@ -19,9 +19,11 @@ date_default_timezone_set('Europe/Warsaw');
                     days: data.days,
                     hours: data.hours,
                     minutes: data.minutes,
-                    seconds: data.seconds
+                    seconds: data.seconds,
+                    active: data.active
                 };
                 updateDisplay();
+                updateStatusBar();
             } catch (error) {
                 console.error("Błąd pobierania danych:", error);
             }
@@ -33,6 +35,15 @@ date_default_timezone_set('Europe/Warsaw');
             document.getElementById('hours').innerText = countdownData.hours;
             document.getElementById('minutes').innerText = countdownData.minutes;
             document.getElementById('seconds').innerText = countdownData.seconds;
+        }
+
+        function updateStatusBar() {
+            const statusBar = document.getElementById('status-bar');
+            if (countdownData && countdownData.active) {
+                statusBar.style.background = "green";
+            } else {
+                statusBar.style.background = "red";
+            }
         }
 
         function startCountdown() {
@@ -60,6 +71,7 @@ date_default_timezone_set('Europe/Warsaw');
                 }
 
                 updateDisplay();
+                updateStatusBar();
             }, 1000);
         }
 
