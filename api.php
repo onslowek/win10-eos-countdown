@@ -11,35 +11,32 @@ $easter = date('Y-m-d', easter_date($now->format('Y')));
 $variableHolidays = [date('m-d', strtotime($easter)), date('m-d', strtotime($easter . ' +1 day'))];
 $holidays = array_merge($fixedHolidays, $variableHolidays);
 
-// Funkcja do sprawdzania, czy dany dzień to dzień roboczy
 function isWorkingDay($date, $holidays) {
-    $dayOfWeek = $date->format('N'); // 1 (pon) - 7 (nd)
-    return ($dayOfWeek <= 5 && !in_array($date->format('m-d'), $holidays));
+    return ($date->format('N') <= 5 && !in_array($date->format('m-d'), $holidays));
 }
 
-// Liczenie pozostałych godzin pracy
+// Obliczanie czasu tylko w dni robocze 8:00-16:00
 $remainingSeconds = 0;
 $tempDate = clone $now;
 $currentHour = (int) $now->format('H');
 $inWorkHours = ($currentHour >= 8 && $currentHour < 16);
 
-// Jeśli dzisiaj jest dzień roboczy, ale poza godzinami pracy, pomijamy dzisiejszy dzień
-if (isWorkingDay($now, $holidays) && !$inWorkHours) {
-    $now->setTime(8, 0); // Ustawienie godziny na 8:00, aby zaczynać od początku dnia roboczego
-}
-
 while ($tempDate < $targetDate) {
     if (isWorkingDay($tempDate, $holidays)) {
-        if ($tempDate->format('Y-m-d') == $now->format('Y-m-d') && !$inWorkHours) {
-            // Dziś, ale poza godzinami pracy – pomijamy
+        if ($tempDate->format('Y-m-d') == $now->format('Y-m-d')) {
+            // Jeśli to dziś, dodajemy tylko pozostały czas do 16:00
+            if ($inWorkHours) {
+                $remainingSeconds += (16 - $currentHour) * 3600 - $now->format('i') * 60 - $now->format('s');
+            }
         } else {
-            $remainingSeconds += 8 * 3600; // Dodajemy 8 godzin pracy
+            // Dodajemy cały dzień roboczy (8 godzin)
+            $remainingSeconds += 8 * 3600;
         }
     }
     $tempDate->modify('+1 day');
 }
 
-// Przeliczenie na dni, godziny, minuty i sekundy
+// Konwersja na dni, godziny, minuty i sekundy
 $days = floor($remainingSeconds / (8 * 3600));
 $hours = floor(($remainingSeconds % (8 * 3600)) / 3600);
 $minutes = floor(($remainingSeconds % 3600) / 60);
