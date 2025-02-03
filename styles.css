@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f0f0f0;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background: #222;
+    color: #fff;
+}
+
+.container {
+    margin-top: 50px;
+    position: relative;
+}
+
+/* Nagłówek */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #0078D4;
+}
+
+/* Flip clock */
+.flip-clock {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.time-box {
+    background: #222;
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 5px;
+    min-width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.time-box small {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.seconds {
+    color: lightgray;
+}
+
+/* Status bar - szerokość dynamiczna */
+#status-bar {
+    height: 3px;
+    margin: 20px auto;
+    background: red;
+    transition: background 0.3s;
+}
+
+/* Ikona zmiany motywu (dzień/noc) w prawym górnym rogu */
+#theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.dark-mode #theme-toggle {
+    color: #fff;
+}
+
+/* Hover efekt */
+#theme-toggle:hover {
+    opacity: 0.7;
+}
