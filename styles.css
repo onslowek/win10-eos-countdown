@@ -1,44 +1,61 @@
+/* Style podstawowe */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     background: #f0f0f0;
     color: #333;
     transition: background 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
 }
 
+/* Ciemny motyw */
 .dark-mode {
     background: #222;
     color: #fff;
 }
 
-.container {
-    margin-top: 50px;
-    position: relative;
+/* Przycisk zmiany motywu - tylko ikona */
+#theme-toggle {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: inherit;
 }
 
-/* Nagłówek */
+/* Styl dla kontenera z zegarem */
+.container {
+    margin-top: 30px;
+}
+
+/* Styl dla tytułu */
 h1 {
     font-size: 28px;
     margin-bottom: 20px;
-    color: #0078D4;
 }
 
-/* Flip clock */
+/* Flexbox do układu zegara */
 .flip-clock {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    max-width: 400px;
+    gap: 6px;
+    width: 100%; /* Ustawiamy szerokość na 100% dla lepszego dopasowania */
+    max-width: 500px; /* Ograniczamy maksymalną szerokość zegara */
     margin: 0 auto;
 }
 
+/* Styl dla poszczególnych "czasomierzy" */
 .time-box {
     background: #222;
     color: white;
-    font-size: 24px;
+    font-size: 40px;
     padding: 20px;
     border-radius: 5px;
-    min-width: 80px;
+    min-width: 60px;
     text-align: center;
     font-weight: bold;
     position: relative;
@@ -49,38 +66,26 @@ h1 {
     display: block;
     font-size: 14px;
     margin-top: 5px;
+	font-weight: normal;
 }
 
-.seconds {
-    color: lightgray;
-}
 
-/* Status bar - szerokość dynamiczna */
+/* Pasek statusu, dopasowuje szerokość do kontenera zegara */
 #status-bar {
-    height: 3px;
+    height: 2px;
     margin: 20px auto;
     background: red;
-    transition: background 0.3s;
+    width: 370px;
 }
 
-/* Ikona zmiany motywu (dzień/noc) w prawym górnym rogu */
-#theme-toggle {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
-    transition: color 0.3s;
-}
+/* Styl na urządzenia mobilne */
+@media (max-width: 768px) {
+    .flip-clock {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.dark-mode #theme-toggle {
-    color: #fff;
-}
-
-/* Hover efekt */
-#theme-toggle:hover {
-    opacity: 0.7;
+    .time-box {
+        margin-bottom: 10px;
+    }
 }
