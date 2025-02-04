@@ -1,5 +1,7 @@
 # Windows 10 EOS Countdown - Licznik czasu do końca wsparcia systemu Windows 10
 
+![image](https://github.com/user-attachments/assets/a6aafc46-86cb-408a-8bc5-a0c1fe84cb07)
+
 Repozytorium zawiera aplikację PHP, która wyświetla licznik odliczający do końca wsparcia dla systemu Windows 10. Składa się z trzech głównych plików:
 
 1. **`index.php`** - Strona internetowa wyświetlająca odliczający się czas.
