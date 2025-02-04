@@ -17,7 +17,6 @@ Repozytorium zawiera aplikację PHP, która wyświetla licznik odliczający do k
   - Weekendy i dni wolne od pracy są pomijane.
 - **Wyświetlanie odliczania**:
   - Czas wyświetlany w formacie **DD:HH:MM:SS**.
-  - Sekundy mają jaśniejszy kolor dla lepszej czytelności.
   - Informacja o aktywności licznika (czy trwa dzień roboczy).
 - **Motyw strony**:
   - Możliwość przełączania między jasnym a ciemnym motywem.
